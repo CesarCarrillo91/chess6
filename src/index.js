@@ -1,9 +1,18 @@
 const chessboard = document.querySelector(".chessboard");
-const cells = chessboard.querySelector("td");
-const icon = document.querySelector(".fas");
+const gameRules = [];
 
-const game = [];
+chessboard.addEventListener("click", event => {
+  const { target } = event;
+  const isIcon = target.tagName === "I";
 
-icon.addEventListener("click", event => {
-  icon.parentElement.classList.toggle("active");
+  if (!isIcon) return;
+
+  const { className, parentElement: cell } = target;
+  const { cellIndex: x, parentElement: row } = cell;
+  const { rowIndex: y } = row;
+  console.log(x, y);
+
+  if (className.includes("pawn")) {
+    target.parentElement.classList.toggle("active");
+  }
 });
