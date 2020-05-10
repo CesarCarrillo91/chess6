@@ -30,10 +30,12 @@ chessboard.addEventListener("click", event => {
     const { cellIndex: x, parentElement: row } = cell;
     const { rowIndex: y } = row;
     const coordinates = "" + x + y;
+    const index = x + y * gameRules.dimensions.cells;
 
     if (gameRules.emptyCells.includes(coordinates)) return;
 
-    const index = x + y * gameRules.dimensions.cells;
+    selectedPiece.parentElement.classList.remove("active");
     cells[index].appendChild(selectedPiece);
+    selectedPiece = undefined;
   }
 });

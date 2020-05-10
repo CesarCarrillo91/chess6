@@ -1,5 +1,13 @@
+$empty-space-color: whitesmoke;
+$whites-space-color: coral;
+$blacks-space-color: darkslategrey;
+$active-piece-color: rosybrown;
+$whites-piece-color: cornsilk;
+$blacks-piece-color: black;
+
 body {
   font-family: sans-serif;
+  background-color: $empty-space-color;
 }
 
 table.chessboard {
@@ -11,21 +19,27 @@ table.chessboard {
 
     &.whites {
       .fas {
-        color: cornsilk;
+        color: $whites-piece-color;
+      }
+    }
+
+    &.blacks {
+      .fas {
+        color: $blacks-piece-color;
       }
     }
   }
 
   tr:nth-child(odd) td:nth-child(even),
   tr:nth-child(even) td:nth-child(odd) {
-    background: white;
+    background: $whites-space-color;
   }
 
   td {
     width: 35px;
     height: 35px;
-    background: #333;
-    border: 2px solid #333;
+    background: $blacks-space-color;
+    border: 2px solid $blacks-space-color;
     text-align: center;
 
     i {
@@ -36,12 +50,12 @@ table.chessboard {
     }
   }
 
-  td.active {
-    background-color: green !important;
-  }
-
   td.space {
     border: none;
-    background: white !important;
+    background: $empty-space-color !important;
+  }
+
+  td.active {
+    background-color: $active-piece-color;
   }
 }
