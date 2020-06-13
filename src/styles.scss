@@ -16,18 +16,6 @@ table.chessboard {
 
   tr {
     border: none;
-
-    &.whites {
-      .fas {
-        color: $whites-piece-color;
-      }
-    }
-
-    &.blacks {
-      .fas {
-        color: $blacks-piece-color;
-      }
-    }
   }
 
   tr:nth-child(odd) td:nth-child(even),
@@ -36,8 +24,8 @@ table.chessboard {
   }
 
   td {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
     background: $blacks-space-color;
     border: 2px solid $blacks-space-color;
     text-align: center;
@@ -47,6 +35,14 @@ table.chessboard {
       height: 100%;
       font-size: 24px;
       line-height: 1.4;
+
+      &.whites {
+        color: $whites-piece-color;
+      }
+  
+      &.blacks {
+        color: $blacks-piece-color;
+      }
     }
   }
 
@@ -56,6 +52,6 @@ table.chessboard {
   }
 
   td.active {
-    background-color: $active-piece-color;
+    background-color: $active-piece-color !important;
   }
 }
